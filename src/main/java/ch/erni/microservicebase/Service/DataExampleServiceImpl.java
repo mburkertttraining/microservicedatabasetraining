@@ -53,4 +53,5 @@ public class DataExampleServiceImpl implements DataExampleService {
         repository.deleteAll();
     }
 
+    //TODO Add the new Query to the service and the interface to make it useable
 }

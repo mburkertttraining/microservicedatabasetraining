@@ -1,19 +1,20 @@
 package ch.erni.microservicebase.Service;
 
-import ch.erni.microservicebase.Model.Example;
-import ch.erni.microservicebase.Persistence.DAO.Person;
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+import org.springframework.stereotype.Service;
+
+import ch.erni.microservicebase.Model.Example;
+import ch.erni.microservicebase.Persistence.DAO.Person;
 
 /**
  * Created by buma on 19.01.2017.
  */
 
 @Service
-public class ExampleServiceImpl implements ExampleService{
+public class ExampleServiceImpl implements ExampleService {
 
     private static final long DATE = 2222222222L;
 

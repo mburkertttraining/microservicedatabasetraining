@@ -153,3 +153,8 @@ target/checkstyle-cachefile
 .idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_16.xml
 .idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_14.xml
 .idea/libraries/Maven__org_apache_poi_poi_ooxml_3_14.xml
+target/classes/ch/erni/microservicebase/Service/ExampleServiceImpl.class
+target/classes/ch/erni/microservicebase/Service/DataExampleServiceImpl.class
+database/samspledb.trace.db
+database/samspledb.mv.db
+.idea/checkstyle-idea.xml

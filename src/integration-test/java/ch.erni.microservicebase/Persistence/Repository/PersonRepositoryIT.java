@@ -2,6 +2,7 @@ package ch.erni.microservicebase.Persistence.Repository;
 
 import ch.erni.microservicebase.Persistence.DAO.Person;
 import org.assertj.core.groups.Tuple;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,9 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @RunWith(SpringRunner.class)
 @DataJpaTest
+@Ignore
 public class PersonRepositoryIT {
-
+//TODO 01 Activate the tests and run them what do you think why are this no Unit Tests?
     @Autowired
     private PersonRepository repository;
 
@@ -100,4 +102,5 @@ public class PersonRepositoryIT {
 
         assertThat(resultDeleted).hasSize(0);
     }
+    //TODO 04 Implement two test method one for each dataset to proof that our query is really working do not forget @DirtiesContext
 }

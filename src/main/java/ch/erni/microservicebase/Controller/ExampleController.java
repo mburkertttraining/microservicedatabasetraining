@@ -4,7 +4,6 @@ import ch.erni.microservicebase.Model.Example;
 import ch.erni.microservicebase.Persistence.DAO.Person;
 import ch.erni.microservicebase.Service.DataExampleService;
 import ch.erni.microservicebase.Service.ExampleService;
-import ch.erni.microservicebase.Service.ExampleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by buma on 19.01.2017.
  */
+
+
 
 @RestController
 public class ExampleController {
@@ -53,9 +54,12 @@ public class ExampleController {
     }
 
 
+
+
+
     @RequestMapping("/executeTestcase")
     public String executeTestcase() {
-        return exampleService.getCompletedExample(new Person()).getCompletedExample();
+         return exampleService.getCompletedExample(new Person()).getCompletedExample();
     }
 
 }
