@@ -19,4 +19,6 @@ public interface DataExampleService {
     void saveAllPersons(Collection<Person> persons);
 
     void deleteAllPersons();
+
+    Person getPerson(String lastName);
 }

@@ -22,9 +22,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @RunWith(SpringRunner.class)
 @DataJpaTest
-@Ignore
 public class PersonRepositoryIT {
-//TODO 01 Activate the tests and run them what do you think why are this no Unit Tests?
+
     @Autowired
     private PersonRepository repository;
 
@@ -102,5 +101,34 @@ public class PersonRepositoryIT {
 
         assertThat(resultDeleted).hasSize(0);
     }
-    //TODO 04 Implement two test method one for each dataset to proof that our query is really working do not forget @DirtiesContext
+
+    @Test
+    @DirtiesContext
+    public void get_person_from_lastname_dataset_frank() {
+        repository.deleteAll();
+        repository.save(getDataSetFrank());
+
+        Person result = repository.findBylastName("van Beren");
+
+        assertThat(result).isNotNull();
+        assertThat(result)
+                .extracting(Person::getFirstName, Person::getLastName, Person::getCountry, Person::getTown)
+                .containsExactly("Frank", "van Beren", new Locale("DE", "DEU"), "Frankfurt");
+        repository.deleteAll();
+    }
+
+    @Test
+    @DirtiesContext
+    public void get_person_from_lastname_dataset_walter() {
+        repository.deleteAll();
+        repository.save(getDataSetWalter());
+
+        Person result = repository.findBylastName("Weis");
+
+        assertThat(result).isNotNull();
+        assertThat(result)
+                .extracting(Person::getFirstName, Person::getLastName, Person::getCountry, Person::getTown)
+                .containsExactly("Walter", "Weis", new Locale("DE", "DEU"), "Berlin");
+        repository.deleteAll();
+    }
 }

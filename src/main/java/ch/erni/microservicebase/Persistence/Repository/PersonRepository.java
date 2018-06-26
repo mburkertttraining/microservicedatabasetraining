@@ -10,5 +10,5 @@ import ch.erni.microservicebase.Persistence.DAO.Person;
  */
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
-	//TODO 02 Implement a Query method which finds a person by its lastname please use the easy jpa way for this if you dont know ask the instructor
+    Person findBylastName(String lastName);
 }
